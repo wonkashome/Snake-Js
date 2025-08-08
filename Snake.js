@@ -33,6 +33,28 @@ window.onload = function() {
     setInterval(update, 1000/10); //100 miliseconds
 }
 
+function addMobileControls() {
+    var up = document.getElementById("up");
+    var down = document.getElementById("down");
+    var left = document.getElementById("left");
+    var right = document.getElementById("right");
+
+    if (up && down && left && right) {
+        up.addEventListener("touchstart", function() {
+            changeDirection({code: "KeyW"});
+        });
+        down.addEventListener("touchstart", function() {
+            changeDirection({code: "KeyS"});
+        });
+        left.addEventListener("touchstart", function() {
+            changeDirection({code: "KeyA"});
+        });
+        right.addEventListener("touchstart", function() {
+            changeDirection({code: "KeyD"});
+        });
+    }
+}
+
 function update() {
     if (gameOver) {
         return;
@@ -102,4 +124,5 @@ function placeFood() {
     //(0-1) * cols -> (0-19.9999) -> (0-19) * 25
     foodX = Math.floor(Math.random() * cols) * blockSize;
     foodY = Math.floor(Math.random() * rows) * blockSize;
+
 }
