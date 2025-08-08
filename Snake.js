@@ -29,6 +29,7 @@ window.onload = function() {
 
     placeFood();
     document.addEventListener("keyup", changeDirection);
+    addMobileControls();
     // update();
     setInterval(update, 1000/10); //100 miliseconds
 }
@@ -126,3 +127,4 @@ function placeFood() {
     foodY = Math.floor(Math.random() * rows) * blockSize;
 
 }
+
