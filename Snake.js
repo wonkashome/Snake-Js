@@ -10,7 +10,7 @@ var context;
 var snakeX = blockSize * 5;
 var snakeY = blockSize * 5;
 
-var velocityX = 1; // Start right
+var velocityX = 0.5; // Start right
 var velocityY = 0;
 
 var snakeBody = [];
@@ -127,4 +127,5 @@ function placeFood() {
     foodY = Math.floor(Math.random() * rows) * blockSize;
 
 }
+
 
